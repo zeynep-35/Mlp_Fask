@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ev Fiyatı Tahmin Sistemi</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f9; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 400px; text-align: center; }
+        h2 { color: #333; margin-bottom: 20px;}
+        label { display: block; text-align: left; margin-top: 10px; color: #666; font-size: 0.9em;}
+        input { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; margin-top: 20px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;}
+        button:hover { background-color: #218838; }
+        .result { margin-top: 25px; padding: 15px; background-color: #e9ecef; border-radius: 5px; font-weight: bold; color: #007bff; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>🏡 Ev Fiyatı Tahmini</h2>
+        <form action="{{ url_for('predict')}}" method="post">
+            
+            <label>Metrekare (500 - 5000 arası):</label>
+            <input type="number" name="Square_Footage" min="500" max="5000" placeholder="Örn: 1500" required>
+
+            <label>Yatak Odası (1 - 5 arası):</label>
+            <input type="number" name="Num_Bedrooms" min="1" max="5" placeholder="Örn: 3" required>
+
+            <label>Banyo Sayısı (1 - 3 arası):</label>
+            <input type="number" name="Num_Bathrooms" min="1" max="3" placeholder="Örn: 2" required>
+
+            <label>Yapım Yılı (1950 - 2022 arası):</label>
+            <input type="number" name="Year_Built" min="1950" max="2022" placeholder="Örn: 2010" required>
+
+            <label>Arsa Büyüklüğü (0.5 - 5.0 arası):</label>
+            <input type="number" name="Lot_Size" step="0.01" min="0.5" max="5.0" placeholder="Örn: 1.50" required>
+            
+            <label>Garaj Kapasitesi (0 - 2 arası):</label>
+            <input type="number" name="Garage_Size" min="0" max="2" placeholder="Örn: 1" required>
+            
+            <button type="submit">Fiyatı Tahmin Et</button>
+        </form>
+
+        <div class="result">
+            {{ prediction_text }}
+        </div>
+    </div>
+
+</body>
+</html>
