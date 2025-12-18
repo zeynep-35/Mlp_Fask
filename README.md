@@ -39,7 +39,7 @@ Veri seti; evlerin konumu, oda sayısı, metrekare bilgisi, bina yaşı gibi
 fiyatı etkileyen çeşitli öznitelikleri içermektedir.
 
 📌 Dataset linki:  
-🔗 BURAYA_KAGGLE_LINKINI_EKLE
+🔗 https://www.kaggle.com/datasets/prokshitha/home-value-insights
 
 ---
 
