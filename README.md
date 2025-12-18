@@ -107,9 +107,4 @@ uygulama** haline getirilmiştir.
 
 ---
 
-## ▶️ Projeyi Çalıştırma
-
-1. Gerekli kütüphaneler yüklenir:
-   ```bash
-   pip install numpy pandas scikit-learn flask
    
