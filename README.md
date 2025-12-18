@@ -106,5 +106,9 @@ uygulama** haline getirilmiştir.
 - Jupyter Notebook  
 
 ---
+## ⚙️ Kurulum ve Çalıştırma
 
+1. **Kütüphaneleri Yükleyin:**
+   ```bash
+   pip install flask pandas numpy scikit-learn statsmodels
    
